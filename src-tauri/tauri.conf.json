@@ -6,8 +6,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "log-viewer-tauri-react",
-    "version": "0.0.0"
+    "productName": "Log Viewer",
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -19,7 +19,7 @@
     },
     "windows": [
       {
-        "title": "log-viewer-tauri-react",
+        "title": "Log Viewer",
         "maximized": true
       }
     ],
@@ -29,7 +29,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.log-viewer-tauri-react",
+      "identifier": "com.log-viewer",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
