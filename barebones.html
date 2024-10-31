@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XML Prettifier and Syntax Highlighter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdn.rawgit.com/vkiryukhin/vkBeautify/master/vkbeautify.js"></script>
+    <style>
+        pre {
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.Retool.subscribe(function (model) {
+            console.log(model.line)
+            document.getElementById('inputXml').value = model.line;
+        });
+      
+        document.getElementById('prettifyButton').onclick = function() {
+            const inputXml = document.getElementById('inputXml').value;
+            const prettyXml = vkbeautify.xml(inputXml);
+            document.getElementById('outputXml').textContent = prettyXml;
+            hljs.highlightElement(document.getElementById('outputXml'));
+        };
+    </script>
+    <input id="inputXml"></input>
+    <button id="prettifyButton">Prettify and Highlight</button>
+    <pre><code id="outputXml" class="xml"></code></pre>
+</body>
+</html>
